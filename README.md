@@ -49,7 +49,7 @@ npm run dev
 
 ### Frontend (React 19 + TypeScript + Vite)
 - **Design System Shadcn/UI**: Interface dark-mode sofisticada, focada em usabilidade moderna, construída com Tailwind CSS v4.
-- **Hook Pattern**: Separação estrita de concerns. A camada visual (`pages`) não possui lógicas complexas; todo o gerenciamento de estados, side-effects e consumo da API residem nos Custom Hooks (`useAuth`, `useChat`, `useProducts`).
+- **Hook Pattern**: Separação estrita de preocupações/utilidade. A camada visual (`pages`) não possui lógicas complexas; todo o gerenciamento de estados, side-effects e consumo da API residem nos Custom Hooks (`useAuth`, `useChat`, `useProducts`). Isso ajuda a manter o código da tela limpo e fácil de escalar e manter no futuro, que é nosso objetivo.
 - **UX Otimizada**: O formulário de registro gera dinamicamente IDs de empresa válidos para o MongoDB, removendo fricção de configuração para novos usuários.
 
 ---
