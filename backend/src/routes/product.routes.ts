@@ -8,6 +8,7 @@ router.use(authenticate);
 
 router.get('/', ProductController.findAll);
 
+//Apenas para admins
 router.post('/', authorizeAdmin, ProductController.create);
 router.put('/:id', authorizeAdmin, ProductController.update);
 router.delete('/:id', authorizeAdmin, ProductController.delete);

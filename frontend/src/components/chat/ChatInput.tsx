@@ -1,13 +1,13 @@
-import { useState, type FormEvent, type KeyboardEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { SendHorizontal } from 'lucide-react';
+import { useState, type FormEvent, type KeyboardEvent } from 'react';
 
 interface ChatInputProps {
   onSend: (message: string) => void;
   disabled?: boolean;
 }
-
+  
 export function ChatInput({ onSend, disabled }: ChatInputProps) {
   const [value, setValue] = useState('');
 

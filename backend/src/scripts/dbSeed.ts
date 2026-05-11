@@ -49,8 +49,7 @@ export const runSeed = async () => {
   console.log('Seed finalizado com sucesso!');
 };
 
-// Executa apenas se for o script principal
-if (require.main === module) {
+if (!process.env.JEST_WORKER_ID) {
   runSeed()
     .then(() => process.exit(0))
     .catch((err) => {
@@ -58,3 +57,4 @@ if (require.main === module) {
       process.exit(1);
     });
 }
+
