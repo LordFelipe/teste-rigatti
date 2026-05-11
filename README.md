@@ -1,6 +1,6 @@
 # Rigatti Store — Fullstack Challenge
 
-Desafio técnico consistindo em uma API integrada a um assistente de Inteligência Artificial (Google Gemini) e um Frontend moderno com React + Vite.
+Desafio técnico consistindo em uma API integrada a um assistente de Inteligência Artificial (Groq Cloud - Llama 3.3) e um Frontend moderno com React + Vite.
 
 ---
 
@@ -20,7 +20,7 @@ cd backend
 npm install
 ```
 1. Copie o `.env.example` para `.env`
-2. Configure sua `GOOGLE_GENERATIVE_AI_API_KEY` (obtenha de graça em aistudio.google.com). 
+2. Configure sua `GROQ_API_KEY` (obtenha de graça em console.groq.com). 
 *Nota: O sistema funciona mesmo sem chave de IA ativa graças ao nosso mecanismo de Fallback de Segurança.*
 ```bash
 npm run dev
@@ -45,7 +45,7 @@ npm run dev
 ### Backend (Node.js + TypeScript + Express)
 - **Resiliência & Fallback**: Implementei uma arquitetura tolerante a falhas no `ChatService`. Caso a API externa da IA falhe (limite de cota ou instabilidade), o sistema chaveia automaticamente para o **Modo de Segurança**, executando a busca direto no banco de dados e gerando uma resposta local para não quebrar a experiência do usuário.
 - **Multi-tenancy (Company-based)**: As queries filtram `companyId` forçado a nível de serviço, isolando 100% os dados entre empresas para não haver data leak.
-- **Vercel AI SDK**: O chat utiliza `tool calling` no `Google Gemini`, forçando o robô a utilizar a função `searchProducts` para basear suas respostas apenas em dados reais.
+- **Vercel AI SDK**: O chat utiliza `tool calling` na API da **Groq Cloud** (modelo Llama 3.3), forçando o LLM a utilizar a função `searchProducts` para basear suas respostas estritamente em dados reais do banco da empresa.
 
 ### Frontend (React 19 + TypeScript + Vite)
 - **Design System Shadcn/UI**: Interface dark-mode sofisticada, focada em usabilidade moderna, construída com Tailwind CSS v4.

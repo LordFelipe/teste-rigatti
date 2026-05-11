@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { groq } from '@ai-sdk/groq';
 import { generateText, stepCountIs, tool } from 'ai';
 import { z } from 'zod';
 import Product from '../models/product';
@@ -9,7 +9,7 @@ export class ChatService {
   async processMessage(userMessage: string): Promise<string> {
     try {
       const { text } = await generateText({
-        model: google('gemini-2.0-flash'),
+        model: groq('llama-3.3-70b-versatile'),
         system: `Você é um assistente virtual de e-commerce útil e educado. 
         Responda às dúvidas do cliente se baseando único e exclusivamente nos produtos retornados pela sua ferramenta de busca. 
         Se o produto não existir no banco, diga que não encontrou. Não invente dados para o pedinte.`,
