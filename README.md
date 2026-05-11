@@ -34,6 +34,8 @@ cd frontend
 npm install
 npm run dev
 ```
+1. Copie o `.env.example` para o seu `.env`
+
 *(O frontend rodará na porta 5173)*
 
 ---
