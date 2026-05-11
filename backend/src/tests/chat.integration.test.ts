@@ -16,8 +16,8 @@ jest.mock('ai', () => {
   };
 });
 
-jest.mock('@ai-sdk/openai', () => ({
-  openai: jest.fn().mockReturnValue('mock-openai-model'),
+jest.mock('@ai-sdk/groq', () => ({
+  groq: jest.fn().mockReturnValue('mock-groq-model'),
 }));
 
 beforeAll(async () => await connectTestDB());
